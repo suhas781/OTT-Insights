@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OTT Insights Dashboard</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<!-- SIDEBAR -->
+<div class="sidebar">
+    <h2 class="sidebar-title">OTT Panel</h2>
+    <a href="#genres">Genres</a>
+    <a href="#shows">Shows</a>
+    <a href="#daily">Daily Watch</a>
+    <a href="#user-section">User Insights</a>
+</div>
+
+<!-- MAIN CONTENT -->
+<div class="main-content">
+
+<h1 class="title">OTT Insights Dashboard</h1>
+
+<div class="container">
+
+    <!-- GENRES -->
+    <div class="card active" id="genres">
+        <div class="card-header" onclick="toggleCard(this)">
+            <h2>Top Genres</h2>
+        </div>
+        <div class="card-content">
+            <canvas id="genreChart"></canvas>
+        </div>
+    </div>
+
+    <!-- SHOWS -->
+    <div class="card active" id="shows">
+        <div class="card-header" onclick="toggleCard(this)">
+            <h2>Top Shows</h2>
+        </div>
+        <div class="card-content">
+            <canvas id="showChart"></canvas>
+        </div>
+    </div>
+
+    <!-- DAILY -->
+    <div class="card active" id="daily">
+        <div class="card-header" onclick="toggleCard(this)">
+            <h2>Daily Watch Time</h2>
+        </div>
+        <div class="card-content">
+            <canvas id="dailyChart"></canvas>
+        </div>
+    </div>
+
+    <!-- USER INSIGHTS -->
+    <div class="card" id="user-section">
+        <div class="card-header" onclick="toggleCard(this)">
+            <h2>User Insights</h2>
+        </div>
+
+        <div class="card-content">
+            <input id="userIdInput" placeholder="Enter User ID (e.g., U0011)" />
+            <button onclick="fetchUser()">Get User Stats</button>
+
+            <div id="userCard" class="user-card"></div>
+        </div>
+    </div>
+
+</div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
